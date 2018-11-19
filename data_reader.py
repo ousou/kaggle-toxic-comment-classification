@@ -12,6 +12,8 @@ def read_data(train_data_perc=0.8):
     y = all_data[["toxic", "severe_toxic", "obscene",
                         "threat", "insult", "identity_hate"]]
 
+    if train_data_perc == 1:
+        return X, y
     np.random.seed(seed)
     msk = np.random.rand(len(X)) < train_data_perc
     X_train = X[msk].reset_index(drop=True)
