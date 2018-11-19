@@ -24,11 +24,9 @@ def read_data(train_data_perc=0.8):
     return X_train, y_train, X_test, y_test
 
 def read_test_data():
-    train_data_file = DATA_FOLDER + "/" + "train.csv"
+    test_data_file = DATA_FOLDER + "/" + "test.csv"
 
-    all_data = pd.read_csv(train_data_file)
+    all_data = pd.read_csv(test_data_file)
     X = all_data[["id", "comment_text"]]
-    y = all_data[["toxic", "severe_toxic", "obscene",
-                        "threat", "insult", "identity_hate"]]
 
-    return X, y
+    return X
